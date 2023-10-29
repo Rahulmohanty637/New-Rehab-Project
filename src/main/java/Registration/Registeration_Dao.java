@@ -39,7 +39,7 @@ public class Registeration_Dao {
 		String res = "Schema Updated Successfully";
 		String role = model.getRole();
 		System.out.print(role);
-		if (role.length() > 5) {
+		if (role.length() > 7) {
 			try {
 				String q1 = "INSERT INTO counselors (first_name, last_name, email, phone_number, qualifications, specializations) values(?, ?, ?, ?, ?, ?)";
 				PreparedStatement pstmt = con.prepareStatement(q1);

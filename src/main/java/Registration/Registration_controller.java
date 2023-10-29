@@ -60,6 +60,7 @@ public class Registration_controller extends HttpServlet {
 		}
 		PrintWriter out = response.getWriter();
 		out.print(result);
+		response.sendRedirect("Login.jsp");
 //		RequestDispatcher rd;
 //        if(result == " Schema updated") {
 //        	rd = request.getRequestDispatcher("/login.jsp");

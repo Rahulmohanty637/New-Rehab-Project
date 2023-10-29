@@ -9,14 +9,18 @@
         // Function to toggle visibility of counselor-specific fields based on role selection
         function toggleCounselorFields() {
             var role = document.getElementById("role").value;
+            var patientFieldhistory = document.getElementById("patientFieldhistory");
             var counselorFieldsqual = document.getElementById("counselorFieldsqual");
             var counselorFieldsspel = document.getElementById("counselorFieldsspel");
             var counselorFieldsphn = document.getElementById("counselorFieldsphn");
+            
 
             // Show counselor-specific fields only when the role is "Counselor"
             counselorFieldsqual.style.display = role === "Counselor" ? "table-row-group" : "none";
             counselorFieldsspel.style.display = role === "Counselor" ? "table-row-group" : "none";
             counselorFieldsphn.style.display = role === "Counselor" ? "table-row-group" : "none";
+            
+            patientFieldhistory.style.display = role === "Patient" ? "table-row-group" : "none";
         }
     </script>
 </head>
@@ -48,10 +52,14 @@
                 <td><label for="role">Role:</label></td>
                 <td>
                     <select id="role" name="role" required onchange="toggleCounselorFields()">
-                        <option value="User">User</option>
+                        <option value="Patient">Patient</option>
                         <option value="Counselor">Counselor</option>
                     </select>
                 </td>
+            </tr>
+            <tr id="patientFieldhistory" style="display: none;">
+                <td><label for="medic history">Medical History:</label></td>
+                <td><input type="text" id="medichistory" name="medichistory"></td>
             </tr>
             <tr id="counselorFieldsqual" style="display: none;">
                 <td><label for="qualifications">Qualifications:</label></td>
