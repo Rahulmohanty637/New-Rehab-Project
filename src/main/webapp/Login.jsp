@@ -17,6 +17,7 @@
 			<option value="User">User</option>
 			<option value="Counselor">Counselor</option>
 		</select> <input type="submit" value="Login">
+		<div ><a href="ResetPassword.jsp">Forgot Password</a></div>
 	</form>
 </body>
 </html>

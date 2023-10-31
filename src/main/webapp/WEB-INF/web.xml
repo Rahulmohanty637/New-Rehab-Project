@@ -29,4 +29,24 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PasswordResetServlet</display-name>
+    <servlet-name>PasswordResetServlet</servlet-name>
+    <servlet-class>PasswordResetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordResetServlet</servlet-name>
+    <url-pattern>/PasswordResetServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PasswordResetConfirmationServlet</display-name>
+    <servlet-name>PasswordResetConfirmationServlet</servlet-name>
+    <servlet-class>Reset_Password.PasswordResetConfirmationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordResetConfirmationServlet</servlet-name>
+    <url-pattern>/PasswordResetConfirmationServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

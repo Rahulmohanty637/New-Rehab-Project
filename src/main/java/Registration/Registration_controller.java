@@ -1,10 +1,14 @@
 package Registration;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -12,6 +16,7 @@ import Model.Model;
 /**
  * Servlet implementation class Registration_controller
  */
+@MultipartConfig
 public class Registration_controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,7 +51,12 @@ public class Registration_controller extends HttpServlet {
 		String qualification = request.getParameter("qualifications");
 		String specialization =  request.getParameter("specializations");
 		String phone = request.getParameter("pnone_no.");
-		Model model = new Model(u_name, password, mail, first_name, last_name, role, qualification, specialization, phone);
+		String medichistory = request.getParameter("medichistory");
+		String filename = request.getParameter("document");
+		
+		System.out.print(filename);
+		
+		Model model = new Model(u_name, password, mail, first_name, last_name, role, qualification, specialization, phone, medichistory, filename);
 		Registeration_Dao dao = new Registeration_Dao();
 		String result ="not";
 		try {
@@ -61,15 +71,7 @@ public class Registration_controller extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print(result);
 		response.sendRedirect("Login.jsp");
-//		RequestDispatcher rd;
-//        if(result == " Schema updated") {
-//        	rd = request.getRequestDispatcher("/login.jsp");
-//        	rd.forward(request, response);
-//        }
-//        else {
-//        	rd = request.getRequestDispatcher("/welcome.jsp");
-//        	rd.forward(request, response);
-//        }
+		
 	}
 
 }

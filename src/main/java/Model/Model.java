@@ -1,10 +1,10 @@
 package Model;
 
 public class Model {
-	private String u_name, password, mail, first_name, last_name, role, qualification, specialization, phone;
+	private String u_name, password, mail, first_name, last_name, role, qualification, specialization, phone, medichistory, filename;
 
 	public Model(String u_name, String password, String mail, String first_name, String last_name, String role,
-			String qualification, String specialization, String phone) {
+			String qualification, String specialization, String phone, String medichistory, String filename) {
 		super();
 		this.u_name = u_name;
 		this.password = password;
@@ -15,6 +15,24 @@ public class Model {
 		this.qualification = qualification;
 		this.specialization = specialization;
 		this.phone = phone;
+		this.medichistory = medichistory;
+		this.filename = filename;
+	}
+
+	public String getMedichistory() {
+		return medichistory;
+	}
+
+	public void setMedichistory(String medichistory) {
+		this.medichistory = medichistory;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	public Model() {
