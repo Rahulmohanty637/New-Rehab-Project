@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Password reset error</h1>
+<h1>Your Profile Picture</h1>
+    <img src="${sessionScope.profilePicture}" alt="Profile Picture">
 </body>
 </html>

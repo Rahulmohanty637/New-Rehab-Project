@@ -59,4 +59,24 @@
     <servlet-name>PatientLoginServlet</servlet-name>
     <url-pattern>/PatientLoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ImageUploadServlet</display-name>
+    <servlet-name>ImageUploadServlet</servlet-name>
+    <servlet-class>Dashboard.ImageUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageUploadServlet</servlet-name>
+    <url-pattern>/ImageUploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProgramServlet</display-name>
+    <servlet-name>ProgramServlet</servlet-name>
+    <servlet-class>Dashboard.ProgramServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProgramServlet</servlet-name>
+    <url-pattern>/ProgramServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -151,7 +151,7 @@ public class LoginDao {
 			if(sett1.next()) {
 				fname = sett1.getString("first_name");
 				qualifications = sett1.getString("qualifications");
-				specializations = sett1.getString("specializations");
+				specializations = sett1.getString("specializations"); 
 			}
 			
 			CounselorModel counselor = new CounselorModel(fname, email, qualifications, specializations);

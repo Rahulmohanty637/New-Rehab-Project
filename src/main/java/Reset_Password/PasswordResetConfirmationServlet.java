@@ -49,9 +49,9 @@ public class PasswordResetConfirmationServlet extends HttpServlet {
 	            
 	     // Redirect to a success page
 	     if(done != null) {
-	    	 response.sendRedirect("password_reset_success.jsp");
+	    	 response.sendRedirect("Login.jsp");
 	     }else {
-	    	 response.sendRedirect("password_reset_error.jsp");
+	    	 response.sendRedirect("ResetPasswordRequest.jsp");
 	     }
 	           
 	}
