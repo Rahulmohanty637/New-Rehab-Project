@@ -9,6 +9,9 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+import Model.CounselorModel;
+import Model.PatientModel;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -42,20 +45,34 @@ public class LoginServlet extends HttpServlet {
         String role = request.getParameter("role");
         LoginDao dao = new LoginDao();
         if (dao.isValidUser(username, password, role)) {
-  
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
             
-            if(role.length() > 5) {
-            	response.sendRedirect("CounselorDashboard.jsp");
-            }else {
+            if(role.length() < 9) {
+            	
+            	PatientModel patient = dao.getPatientData(username);
+        		HttpSession session = request.getSession();
+                session.setAttribute("patientName", patient.getName());
+                session.setAttribute("patientEmail", patient.getEmail());
+                session.setAttribute("medicalHistory", patient.getMedicalHistory());
+                 
             	response.sendRedirect("Patient.jsp");
+            }else {
+            	
+            	CounselorModel counselor = dao.getCounselorData(username);
+            	 HttpSession session = request.getSession();
+                 session.setAttribute("counselorName", counselor.getName());
+                 session.setAttribute("counselorEmail", counselor.getEmail());
+                 session.setAttribute("qualifications", counselor.getQualifications());
+                 session.setAttribute("specializations", counselor.getSpecializations());
+
+                 response.sendRedirect("CounselorDashboard.jsp");
             }
 
         } else {
-            // If login is unsuccessful, redirect back to the login page.
-            response.sendRedirect("login.jsp");
+            
+            response.sendRedirect("Login.jsp");
         }
 	}
+
+	
 
 }

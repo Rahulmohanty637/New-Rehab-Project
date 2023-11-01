@@ -54,7 +54,7 @@ public class PasswordResetServlet extends HttpServlet {
         String userEmail = getUserEmail(usernameOrEmail); 
         if (userEmail != null) {
         	// Redirect to a confirmation page
-            response.sendRedirect("password_reset_confirmation.jsp");
+            response.sendRedirect("Login.jsp");
         }else {
         	PrintWriter out = response.getWriter();
     		out.print("User not found");

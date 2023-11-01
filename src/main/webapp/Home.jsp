@@ -49,7 +49,7 @@
 <body>
 <div class="options">
   <div class="option"><a href="Registration.jsp">Registration</a></div>
-  <div class="option"><a href="login.jsp">Login</a></div>
+  <div class="option"><a href="Login.jsp">Login</a></div>
 </div>
 </body>
 </html>

@@ -7,6 +7,40 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hello User</h1>
+<h1>Welcome, <%= session.getAttribute("patientName") %>!</h1>
+    
+    <h2>Your Information:</h2>
+    <ul>
+        <li><strong>Name:</strong> <%= session.getAttribute("patientName") %></li>
+        <li><strong>Email:</strong> <%= session.getAttribute("patientEmail") %></li>
+        <li><strong>Medical History:</strong> <%= session.getAttribute("medicalHistory") %></li>
+        
+    </ul>
+    
+    
+    <h2>Actions:</h2>
+    <ul>
+        <li><a href="EnrollInProgram.jsp">Enroll in a Program</a></li>
+        <li><a href="BookCounselingSession.jsp">Book a Counseling Session</a></li>
+      
+    </ul>
+    
+  
+    <h2>Your Enrolled Programs:</h2>
+    <ul>
+        <li><strong>Program 1:</strong> Description or details</li>
+        <li><strong>Program 2:</strong> Description or details</li>
+        
+    </ul>
+    
+    
+    <h2>Your Upcoming Appointments:</h2>
+    <ul>
+        <li><strong>Appointment 1:</strong> Date, time, counselor</li>
+        <li><strong>Appointment 2:</strong> Date, time, counselor</li>
+        
+    </ul>
+    
+    
 </body>
 </html>

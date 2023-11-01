@@ -49,4 +49,14 @@
     <servlet-name>PasswordResetConfirmationServlet</servlet-name>
     <url-pattern>/PasswordResetConfirmationServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PatientLoginServlet</display-name>
+    <servlet-name>PatientLoginServlet</servlet-name>
+    <servlet-class>Dashboard.PatientLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PatientLoginServlet</servlet-name>
+    <url-pattern>/PatientLoginServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

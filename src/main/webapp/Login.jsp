@@ -14,7 +14,7 @@
 			type="password" id="password" name="password" required><br>
 		<br> <label for="role">Role:</label> <select id="role"
 			name="role" required onchange="toggleCounselorFields()">
-			<option value="User">User</option>
+			<option value="Patient">Patient</option>
 			<option value="Counselor">Counselor</option>
 		</select> <input type="submit" value="Login">
 		<div ><a href="ResetPassword.jsp">Forgot Password</a></div>
