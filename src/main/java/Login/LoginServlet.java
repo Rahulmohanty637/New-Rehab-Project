@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet {
             	
             	PatientModel patient = dao.getPatientData(username);
         		HttpSession session = request.getSession();
+        		session.setAttribute("id", patient.getId());
                 session.setAttribute("patientName", patient.getName());
                 session.setAttribute("patientEmail", patient.getEmail());
                 session.setAttribute("medicalHistory", patient.getMedicalHistory());

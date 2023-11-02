@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page import="java.util.List"%>
+<%@ page import="Model.Program"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +36,7 @@
 		<form action="LoginServlet" method="post">
 		<a href="BookCounselingSession.jsp">Book a Counseling
 				Session</a></form>
+				
 				</li>
 
 	</ul>
@@ -40,9 +44,20 @@
 
 	<h2>Your Enrolled Programs:</h2>
 	<ul>
-		<li><strong>Program 1:</strong> Description or details</li>
-		<li><strong>Program 2:</strong> Description or details</li>
-
+		<%
+        List<Program> enrolledPrograms = (List<Program>) session.getAttribute("enrolledPrograms");
+        if (enrolledPrograms != null && !enrolledPrograms.isEmpty()) {
+            for (Program program : enrolledPrograms) {
+        %>
+        <li><strong><%= program.getProgram_name() %></strong></li>
+        <%
+            }
+        } else {
+        %>
+        <li>You are not enrolled in any programs.</li>
+        <%
+        }
+        %>
 	</ul>
 
 

@@ -111,7 +111,7 @@ public class LoginDao {
 			medichistory = Set2.getString("medical_history");
 			}
 			
-			PatientModel patient = new PatientModel(fname, email, medichistory);
+			PatientModel patient = new PatientModel(id, fname, email, medichistory);
 			
 			return patient;
 			

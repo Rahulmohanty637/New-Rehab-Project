@@ -79,4 +79,34 @@
     <servlet-name>ProgramServlet</servlet-name>
     <url-pattern>/ProgramServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EnrollInProgramServlet</display-name>
+    <servlet-name>EnrollInProgramServlet</servlet-name>
+    <servlet-class>ProgramEnrollment.EnrollInProgramServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EnrollInProgramServlet</servlet-name>
+    <url-pattern>/EnrollInProgramServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BookCounselingSessionServlet</display-name>
+    <servlet-name>BookCounselingSessionServlet</servlet-name>
+    <servlet-class>Counselling.BookCounselingSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookCounselingSessionServlet</servlet-name>
+    <url-pattern>/BookCounselingSessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AppointmentServlet</display-name>
+    <servlet-name>AppointmentServlet</servlet-name>
+    <servlet-class>Appointments.AppointmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AppointmentServlet</servlet-name>
+    <url-pattern>/AppointmentServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,25 +1,28 @@
-package Dashboard;
+package ProgramEnrollment;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 import Model.Program;
 
 /**
- * Servlet implementation class ProgramServlet
+ * Servlet implementation class EnrollInProgramServlet
  */
-public class ProgramServlet extends HttpServlet {
+public class EnrollInProgramServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProgramServlet() {
+    public EnrollInProgramServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,11 +41,21 @@ public class ProgramServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		System.out.print("Hello");
-		ProgramService psdao = new ProgramService();
-		List<Program> programs = psdao.getProgramsForPatient();
-		request.setAttribute("programs", programs);
-		request.getRequestDispatcher("EnrollInProgram.jsp").forward(request, response);
+		
+		HttpSession session = request.getSession();
+		String programId = request.getParameter("programId");
+		String patientId = request.getParameter("patientId");
+		
+		Date enrollmentDate = new Date(System.currentTimeMillis());
+		
+		ProgramEnrollmentService enrollmentService = new ProgramEnrollmentService();
+        boolean success = enrollmentService.enrollPatientInProgram(patientId, programId, enrollmentDate);
+        
+        List<Program> enrolledPrograms = enrollmentService.getEnrolledProgramForPatient(programId);
+        request.setAttribute("enrolledPrograms", enrolledPrograms);
+		request.getRequestDispatcher("Patient.jsp").forward(request, response);
+
+
 	}
 
 }

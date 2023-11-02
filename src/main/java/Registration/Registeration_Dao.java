@@ -36,7 +36,6 @@ public class Registeration_Dao {
 		loadDriver();
 		Connection con = getConnection();
 		
-		int status = 0;
 		String res = "Schema Updated Successfully";
 		String role = model.getRole();
 		System.out.print(role);
