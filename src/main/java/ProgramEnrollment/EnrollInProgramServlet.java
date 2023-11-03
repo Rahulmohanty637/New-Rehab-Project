@@ -53,7 +53,7 @@ public class EnrollInProgramServlet extends HttpServlet {
         
         List<Program> enrolledPrograms = enrollmentService.getEnrolledProgramForPatient(programId);
         request.setAttribute("enrolledPrograms", enrolledPrograms);
-		request.getRequestDispatcher("Patient.jsp").forward(request, response);
+		request.getRequestDispatcher("EnrolledProgramList.jsp").forward(request, response);
 
 
 	}

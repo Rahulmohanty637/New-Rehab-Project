@@ -8,6 +8,39 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+   <style>
+        /* CSS for card layout */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative; /* Position relative for the circular logo */
+            cursor: pointer;
+        }
+        .circular-logo {
+            position: absolute; /* Position absolute for the circular logo */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 	<h1>
@@ -42,32 +75,30 @@
 	</ul>
 
 
-	<h2>Your Enrolled Programs:</h2>
-	<ul>
-		<%
-        List<Program> enrolledPrograms = (List<Program>) session.getAttribute("enrolledPrograms");
-        if (enrolledPrograms != null && !enrolledPrograms.isEmpty()) {
-            for (Program program : enrolledPrograms) {
-        %>
-        <li><strong><%= program.getProgram_name() %></strong></li>
-        <%
-            }
-        } else {
-        %>
-        <li>You are not enrolled in any programs.</li>
-        <%
-        }
-        %>
-	</ul>
+	 <h2>Your Enrolled Programs and Appointments</h2>
+     <div class="cards-container">
+        <!-- Enrolled Programs Card -->
+        <a href="EnrollInProgramServlet">
+            <div class="card">
+                <h3>Your Enrolled Programs</h3>
+                <div class="circular-logo">
+                    <!-- Add logo or text for the button -->
+                    Button
+                </div>
+            </div>
+        </a>
 
-
-	<h2>Your Upcoming Appointments:</h2>
-	<ul>
-		<li><strong>Appointment 1:</strong> Date, time, counselor</li>
-		<li><strong>Appointment 2:</strong> Date, time, counselor</li>
-
-	</ul>
-
+        <!-- Upcoming Appointments Card -->
+        <a href="YourServletPageURL">
+            <div class="card">
+                <h3>Your Upcoming Appointments</h3>
+                <div class="circular-logo">
+                    <!-- Add logo or text for the button -->
+                    Button
+                </div>
+            </div>
+        </a>
+    </div>
 
 </body>
 </html>

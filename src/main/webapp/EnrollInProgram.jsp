@@ -12,28 +12,46 @@
 </head>
 <body>
 	<h1>Available Programs</h1>
-    <ul>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>Program ID</th>
+            <th>Program Name</th>
+            <th>Patient ID</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
         <%
         List<Program> enrolledPrograms = (List<Program>) request.getAttribute("programs");
         if (enrolledPrograms != null && !enrolledPrograms.isEmpty()) {
             for (Program program : enrolledPrograms) {
         %>
-        <li><%= program.getProgram_id() %> - <%= program.getProgram_name() %>
-            <form action="EnrollInProgramServlet" method="post">
-                <input type="hidden" name="programId" value="<%= program.getProgram_id() %>">
-                <label for="patientId">Patient ID:</label>
-                <input type="text" id="patientId" name="patientId" required>
-                <input type="submit" value="Enroll">
-            </form>
-        </li>
+        <tr>
+            <td><%= program.getProgram_id() %></td>
+            <td><%= program.getProgram_name() %></td>
+            <td>
+                <form action="EnrollInProgramServlet" method="post">
+                    <input type="hidden" name="programId" value="<%= program.getProgram_id() %>">
+                    <input type="text" id="patientId" name="patientId" required>
+                </td>
+                <td>
+                    <input type="submit" value="Enroll">
+                </form>
+            </td>
+        </tr>
         <%
             }
         } else {
         %>
-        <li>You are not enrolled in any programs.</li>
+        <tr>
+            <td colspan="4">You are not enrolled in any programs.</td>
+        </tr>
         <%
         }
         %>
-    </ul>
+    </tbody>
+</table>
+
 </body>
 </html>

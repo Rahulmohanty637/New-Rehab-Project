@@ -61,15 +61,6 @@ public class BookingDao {
 			pstmt1.setString(6, "Pending");
 			pstmt1.executeUpdate();
 			
-			String q2 = "INSERT INTO Therapy_Sessions (counselor_id, patient_id, date, time, duration, outcome) values(?, ?, ?, ?, ?, ?)";
-			PreparedStatement pstmt2 = con.prepareStatement(q2);
-			pstmt2.setString(1, counselorId);
-			pstmt2.setString(2, patientId);
-			pstmt2.setString(3, sessionDate);
-			pstmt2.setString(4, sessionTime);
-			pstmt2.setString(5, sessionDuration);
-			pstmt2.setString(6, "Pending");
-			pstmt2.executeUpdate();
 			
 			return ans;
 			
