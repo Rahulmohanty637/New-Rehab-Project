@@ -2,13 +2,31 @@ package Model;
 
 public class Program {
 
-	int program_id;
+	String program_id;
 	String program_name;
+	String enrollment_date;
+	
 
-	public Program(int programId, String program_name) {
+	public Program(String programId, String program_name, String enrollment_date) {
 		super();
 		this.program_id = programId;
 		this.program_name = program_name;
+		this.enrollment_date = enrollment_date;
+	}
+
+
+	public String getEnrollment_date() {
+		return enrollment_date;
+	}
+
+
+	public void setEnrollment_date(String enrollment_date) {
+		this.enrollment_date = enrollment_date;
+	}
+
+
+	public void setProgram_id(String program_id) {
+		this.program_id = program_id;
 	}
 
 
@@ -18,14 +36,10 @@ public class Program {
 		this.program_name = program_name;
 	}
 
-
-	public int getProgram_id() {
+	public String getProgram_id() {
 		return program_id;
 	}
 
-	public void setProgram_id(int program_id) {
-		this.program_id = program_id;
-	}
 
 	public String getProgram_name() {
 		return program_name;

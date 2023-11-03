@@ -13,10 +13,9 @@
     <table border="1">
     <thead>
         <tr>
-            <th>Appointment ID</th>
-            <th>Patient Name</th>
+            <th>Program ID</th>
+            <th>Program Name</th>
             <th>Date</th>
-            <th>Time</th>
         </tr>
     </thead>
     <tbody>
@@ -26,10 +25,10 @@
             for (Program enp : enrolledprogram) {
         %>
         <tr>
-            <td><%= apt.getAppointment_id() %></td>
-            <td><%= apt.getPatient_name() %></td>
-            <td><%= apt.getDate() %></td>
-            <td><%= apt.getTime() %></td>
+            <td><%= enp.getProgram_id() %></td>
+            <td><%= enp.getProgram_name() %></td>
+            <td><%= enp.getEnrollment_date() %></td>
+            
         </tr>
         <%
             }

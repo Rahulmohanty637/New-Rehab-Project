@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page import="java.util.List"%>
-<%@ page import="Model.Program"%>
 
 <!DOCTYPE html>
 <html>
@@ -78,15 +76,16 @@
 	 <h2>Your Enrolled Programs and Appointments</h2>
      <div class="cards-container">
         <!-- Enrolled Programs Card -->
-        <a href="EnrollInProgramServlet">
+        <form action="EnrollInProgramServlet" method="post">
             <div class="card">
                 <h3>Your Enrolled Programs</h3>
                 <div class="circular-logo">
                     <!-- Add logo or text for the button -->
                     Button
+                    <input type="submit">
                 </div>
             </div>
-        </a>
+        </form>
 
         <!-- Upcoming Appointments Card -->
         <a href="YourServletPageURL">

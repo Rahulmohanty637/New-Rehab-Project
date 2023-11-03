@@ -62,7 +62,7 @@ public class ProgramEnrollmentService {
 			Connection con = getConnection();
 
 	        try {
-	        	String SELECT_ENROLLED_PROGRAMS = "select program_name from Programs WHERE program_id = ?";
+	        	String SELECT_ENROLLED_PROGRAMS = "select program_name from program_enrollment WHERE program_id = ?";
 	            PreparedStatement preparedStatement = con.prepareStatement(SELECT_ENROLLED_PROGRAMS);
 	            preparedStatement.setString(1, programId2);
 	            ResultSet resultSet = preparedStatement.executeQuery();
@@ -70,7 +70,17 @@ public class ProgramEnrollmentService {
 	            while (resultSet.next()) {
 	                String programName = resultSet.getString("program_name");
 
-	                Program program = new Program(programName);
+	                String SELECT_date = "select enrollment_date from Programs WHERE program_id = ?";
+		            PreparedStatement preparedStatement1 = con.prepareStatement(SELECT_date);
+		            preparedStatement1.setString(1, programId2);
+		            ResultSet resultSet1 = preparedStatement.executeQuery();
+		            String date = null;
+		            if(resultSet1.next()) {
+		            	date = resultSet1.getString("enrollment_date");
+		            }
+	                
+	                
+	                Program program = new Program(programId2, programName, date);
 	                enrolledPrograms.add(program);
 	            }
 	        } catch (SQLException e) {
