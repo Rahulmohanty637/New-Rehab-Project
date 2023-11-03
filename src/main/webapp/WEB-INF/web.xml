@@ -109,4 +109,14 @@
     <servlet-name>AppointmentServlet</servlet-name>
     <url-pattern>/AppointmentServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EnrolledProgram</display-name>
+    <servlet-name>EnrolledProgram</servlet-name>
+    <servlet-class>ProgramEnrollment.EnrolledProgram</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EnrolledProgram</servlet-name>
+    <url-pattern>/EnrolledProgram</url-pattern>
+  </servlet-mapping>
 </web-app>

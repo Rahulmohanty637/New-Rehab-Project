@@ -30,10 +30,11 @@ public class Program {
 	}
 
 
-	public Program(String programName) {
+	public Program(String programID, String programName) {
 		// TODO Auto-generated constructor stub
 		super();
-		this.program_name = program_name;
+		this.program_id = programID;
+		this.program_name = programName;
 	}
 
 	public String getProgram_id() {

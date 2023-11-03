@@ -45,10 +45,9 @@ public class ProgramEnrollmentService {
 			statement.setString(1, patientId);
 			statement.setString(2, programId);
 			statement.setDate(3, enrollmentDate);
+			statement.executeUpdate();
 
-			int rowsInserted = statement.executeUpdate();
-
-			return rowsInserted > 0;
+			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -62,7 +61,7 @@ public class ProgramEnrollmentService {
 			Connection con = getConnection();
 
 	        try {
-	        	String SELECT_ENROLLED_PROGRAMS = "select program_name from program_enrollment WHERE program_id = ?";
+	        	String SELECT_ENROLLED_PROGRAMS = "select program_name from programs WHERE program_id = ?";
 	            PreparedStatement preparedStatement = con.prepareStatement(SELECT_ENROLLED_PROGRAMS);
 	            preparedStatement.setString(1, programId2);
 	            ResultSet resultSet = preparedStatement.executeQuery();

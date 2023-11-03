@@ -44,7 +44,7 @@ public class ProgramService {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                int programId = resultSet.getInt("program_id");
+                String programId = resultSet.getString("program_id");
                 String programName = resultSet.getString("program_name");
 
                 Program program = new Program(programId, programName);

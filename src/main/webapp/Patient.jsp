@@ -76,7 +76,7 @@
 	 <h2>Your Enrolled Programs and Appointments</h2>
      <div class="cards-container">
         <!-- Enrolled Programs Card -->
-        <form action="EnrollInProgramServlet" method="post">
+        <form action="EnrolledProgram" method="post">
             <div class="card">
                 <h3>Your Enrolled Programs</h3>
                 <div class="circular-logo">
