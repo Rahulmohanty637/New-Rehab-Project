@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script>
-	// Function to toggle visibility of counselor-specific fields based on role selection
+	
 	function toggleCounselorFields() {
 		
 		var role = document.getElementById("role").value;

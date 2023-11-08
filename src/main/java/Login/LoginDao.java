@@ -6,9 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.mysql.cj.protocol.Resultset;
-import com.mysql.cj.xdevapi.Result;
-import com.mysql.cj.xdevapi.Statement;
 
 import Model.CounselorModel;
 import Model.PatientModel;
